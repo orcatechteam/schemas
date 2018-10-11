@@ -1,0 +1,75 @@
+{
+  "namespace": "com.orcatech.worktime",
+  "type": "record",
+  "name": "sessions",
+  "doc": "Individual subject application sessions tracked using the WorkTime software",
+  "fields": [{
+      "name": "subjectID",
+      "type": ["int", "null"]
+    },
+    {
+      "name": "userID",
+      "type": ["int", "null"]
+    },
+    {
+      "name": "workstationID",
+      "type": ["int", "null"]
+    },
+    {
+      "name": "date",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "start",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "end",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "appid",
+      "type": ["int", "null"]
+    },
+    {
+      "name": "appname",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "appexe",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "appexeFileName",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "doc",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "site",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "domain",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "url",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "search",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "worktime",
+      "type": ["int", "null"]
+    },
+    {
+      "name": "timeIndicator",
+      "type": ["int", "null"]
+    }
+  ]
+}

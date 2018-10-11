@@ -1,0 +1,29 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.timercap",
+  "doc": "TimerCap device which is either iSorts or iCaps, see https://timercap.com",
+  "name": "device",
+  "fields": [{
+      "name": "macaddress",
+      "type": "string",
+      "doc": "The macaddress of the device"
+    },
+    {
+      "name": "number",
+      "type": "int",
+      "doc": "The 'capnumber' which is printed on the device"
+    },
+    {
+      "name": "rows",
+      "type": "int",
+      "default": 0,
+      "doc": "￼The number of rows for this device. iCaps have 0 and iSorts can have several"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "default": "",
+      "doc": "The type of TimerCap device. This will be either 'iCap' or 'iSort'"
+    }
+  ]
+}

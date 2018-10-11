@@ -1,0 +1,31 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.automatic",
+  "doc": "Location as a set of geocoordinates",
+  "name": "location",
+  "fields": [{
+      "name": "lat",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Latitude coordinate of the location"
+    },
+    {
+      "name": "lng",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Longitude coordinate of the location"
+    },
+    {
+      "name": "accuracy",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Accuracy of the location in meters"
+    }
+  ]
+}

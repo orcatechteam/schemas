@@ -1,0 +1,74 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.issue",
+  "doc": "A category of issues",
+  "name": "category",
+  "fields": [{
+      "name": "id",
+      "type": "long",
+      "doc": "The ORCATECH unique identifier"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "A unique name for the category"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "doc": "A longer description of the category"
+    },
+    {
+      "name": "subs",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.issue.category.sub"
+      },
+      "doc": "A list of issues sub categories which are of this type of category"
+    },
+    {
+      "name": "project",
+      "type": "com.orcatech.project",
+      "doc": "The project who created and owns this issue category"
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "When the record was created"
+    },
+    {
+      "name": "createdBy",
+      "type": "long",
+      "doc": "The com.orcatech.user.id for the user who created the record"
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was updated"
+    },
+    {
+      "name": "updatedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who updated the record"
+    },
+    {
+      "name": "deletedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was deleted"
+    },
+    {
+      "name": "deletedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who deleted the record"
+    }
+  ]
+}

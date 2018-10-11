@@ -1,0 +1,60 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.withings",
+  "doc": "An set of basic metrics measured by a withings scale",
+  "name": "body",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "A unix timestamp indicating the time at which the measurement was taken"
+    },
+    {
+      "name": "withingsId",
+      "type": "int",
+      "doc": "The withings user account id associated with the collected metrics"
+    },
+    {
+      "name": "macaddress",
+      "type": "string",
+      "doc": "The macaddress of the withings scale"
+    },
+    {
+      "name": "model",
+      "type": "int",
+      "doc": "The withings model id for the device checking in"
+    },
+    {
+      "name": "batteryLevel",
+      "type": "int",
+      "doc": "The current battery level as a percentage"
+    },
+    {
+      "name": "weight",
+      "type": ["null", "int"],
+      "doc": "The weight measured in grams"
+    },
+    {
+      "name": "fatMass",
+      "type": ["null", "int"],
+      "doc": "The fat weight measured in grams"
+    },
+    {
+      "name": "waterMass",
+      "type": ["null", "int"],
+      "doc": "The water weight measured in grams"
+    },
+    {
+      "name": "boneMass",
+      "type": ["null", "int"],
+      "doc": "The bone weight measured in grams"
+    },
+    {
+      "name": "muscleMass",
+      "type": ["null", "int"],
+      "doc": "The muscle weight measured in grams"
+    }
+  ]
+}

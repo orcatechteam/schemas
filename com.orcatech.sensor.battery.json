@@ -1,0 +1,25 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.sensor",
+  "doc": "An event indicating the battery level of a sensor",
+  "name": "battery",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "A unix timestamp indicating the time at which the battery level was reported"
+    },
+    {
+      "name": "itemID",
+      "type": "int",
+      "doc": "A unique id representing the item in the ORCATECH database"
+    },
+    {
+      "name": "level",
+      "type": "int",
+      "doc": "The battery level as a percentage from 0-100"
+    }
+  ]
+}

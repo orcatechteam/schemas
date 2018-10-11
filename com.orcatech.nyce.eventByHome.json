@@ -1,0 +1,35 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.nyce",
+  "doc": "NYCE sensor events collected over a zigbee network and keyed by homeid. See http://nycesensors.com",
+  "name": "eventByHome",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "A unix timestamp indicating the time at which the event occurred"
+    },
+    {
+      "name": "homeID",
+      "type": "int",
+      "doc": "A unique id representing the home in which the item was assigned in the ORCATECH database"
+    },
+    {
+      "name": "areaID",
+      "type": "int",
+      "doc": "A unique id from the ORCATECH database representing the area in which the sensor is monitoring"
+    },
+    {
+      "name": "itemID",
+      "type": "int",
+      "doc": "The unique item id of the nyce sensor which triggered the event"
+    },
+    {
+      "name": "event",
+      "type": "int",
+      "doc": "A bitmask representing the event that occurred as well as the state of the device. See http://www.zigbee.org/zigbee-for-developers/applicationstandards/zigbeehomeautomation/"
+    }
+  ]
+}

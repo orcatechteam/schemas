@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.sensor",
+  "doc": "An event indicating an opened or closed state of an area monitored by a sensor",
+  "name": "contact",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "A unix timestamp indicating the time at which the detection occurred"
+    },
+    {
+      "name": "itemid",
+      "type": "int",
+      "doc": "A unique id representing the item in the ORCATECH database"
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "doc": "True if the sensor detected an opened state, false if it detected a closed state"
+    },
+    {
+      "name": "areaID",
+      "type": "int",
+      "doc": "A unique id from the ORCATECH database representing the area in which the sensor is monitoring"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.nyce",
+  "doc": "NYCE sensor events collected over a zigbee network and keyed by itemid. See http://nycesensors.com",
+  "name": "eventByItem",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "A unix timestamp indicating the time at which the event occurred"
+    },
+    {
+      "name": "itemID",
+      "type": "int",
+      "doc": "The unique item id of the nyce sensor which triggered the event"
+    },
+    {
+      "name": "event",
+      "type": "int",
+      "doc": "A bitmask representing the event that occurred as well as the state of the device. See http://www.zigbee.org/zigbee-for-developers/applicationstandards/zigbeehomeautomation/"
+    }
+  ]
+}

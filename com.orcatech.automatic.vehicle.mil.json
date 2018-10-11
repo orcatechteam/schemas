@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.automatic.vehicle",
+  "doc": "Vehicle malfunction indicator light",
+  "name": "mil",
+  "fields": [{
+      "name": "code",
+      "type": "string",
+      "doc": "Malfunction indicator lamp code [scope:vehicle:profile]"
+    },
+    {
+      "name": "on",
+      "type": "bool",
+      "doc": "Indicates if the light is on [scope:vehicle:profile]"
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "Time of the event [scope:vehicle:profile]"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "doc": " Human readable description of the mil [scope:vehicle:profile]"
+    }
+  ]
+}

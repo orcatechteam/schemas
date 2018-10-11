@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.emfit",
+  "doc": "No description. Series of calculations?",
+  "name": "calc",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "Start time of out of bed period"
+    },
+    {
+      "name": "hr",
+      "type": ["int", "null"],
+      "doc": "beats per minute"
+    },
+    {
+      "name": "rr",
+      "type": ["int", "null"],
+      "doc": "breaths per minute"
+    },
+    {
+      "name": "activity",
+      "type": ["int", "null"],
+      "doc": "unitless"
+    }
+  ]
+}

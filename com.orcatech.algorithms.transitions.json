@@ -1,0 +1,50 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.algorithms",
+  "doc": "Room transitions derived from sequential sensor fires from different rooms. The transition algorithm does not check that the rooms are adjacent.",
+  "name": "transitions",
+  "fields": [{
+      "name": "homeID",
+      "type": "int",
+      "doc": "Home ID of the event"
+    },
+    {
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "Unix timestamp of the event in seconds"
+    },
+    {
+      "name": "areaStart",
+      "type": "int",
+      "doc": "Sensor Placement area ID of the itemStart sensor"
+    },
+    {
+      "name": "areaEnd",
+      "type": "int",
+      "doc": "Sensor Placement area ID of the itemEnd sensor"
+    },
+    {
+      "name": "itemStart",
+      "type": "int",
+      "doc": "Inventory item ID of transition start sensor"
+    },
+    {
+      "name": "itemEnd",
+      "type": "int",
+      "doc": "Inventory item ID of transition end sensor"
+    },
+    {
+      "name": "itemModelStart",
+      "type": "int",
+      "doc": "Inventory model ID of transition of the itemStart sensor"
+    },
+    {
+      "name": "itemModelEnd",
+      "type": "int",
+      "doc": "Inventory model ID of transition of the itemEnd sensor"
+    }
+  ]
+}

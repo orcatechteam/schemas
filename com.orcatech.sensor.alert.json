@@ -1,0 +1,25 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.sensor",
+  "doc": "An alert indicating a problem with a sensor",
+  "name": "alert",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "A unix timestamp indicating the time at which the alert occurred"
+    },
+    {
+      "name": "itemID",
+      "type": "int",
+      "doc": "A unique id from the ORCATECH database representing the item/sensor"
+    },
+    {
+      "name": "alertID",
+      "type": "int",
+      "doc": "A unique id from the ORCATECH database representing the type of alert which occured"
+    }
+  ]
+}

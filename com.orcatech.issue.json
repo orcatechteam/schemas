@@ -1,0 +1,105 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech",
+  "doc": "An issue that needs to be resolved. Work resolving the issue is tracked through comments and assignments.",
+  "name": "issue",
+  "fields": [{
+      "name": "id",
+      "type": "long",
+      "doc": "The ORCATECH unique identifier"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "A short name describing the issue."
+    },
+    {
+      "name": "comments",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.issue.comment"
+      },
+      "doc": "Any comments relating to the resolution or description of the issue"
+    },
+    {
+      "name": "users",
+      "type": "com.orcatech.user",
+      "doc": "A list of users who the issue is assigned to"
+    },
+    {
+      "name": "subCategory",
+      "type": "com.orcatech.issue.category.sub",
+      "doc": "The sub category of the issue"
+    },
+    {
+      "name": "state",
+      "type": "com.orcatech.issue.state",
+      "doc": "The current state of the issue",
+      "history": "com.orcatech.issue.stateHistory"
+    },
+    {
+      "name": "source",
+      "type": "com.orcatech.issue.source",
+      "doc": "The source of the issue, i.e. phone call, survey, email"
+    },
+    {
+      "name": "project",
+      "type": "com.orcatech.project",
+      "doc": "The project who created and owns this issue"
+    },
+    {
+      "name": "home",
+      "type": "com.orcatech.home",
+      "doc": "The home which the issue is assigned to"
+    },
+    {
+      "name": "item",
+      "type": "com.orcatech.project",
+      "doc": "The item which the issue is assigned to"
+    },
+    {
+      "name": "subject",
+      "type": "com.orcatech.subject",
+      "doc": "The subject who the issue is assigned to"
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "When the record was created"
+    },
+    {
+      "name": "createdBy",
+      "type": "long",
+      "doc": "The com.orcatech.user.id for the user who created the record"
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was updated"
+    },
+    {
+      "name": "updatedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who updated the record"
+    },
+    {
+      "name": "deletedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was deleted"
+    },
+    {
+      "name": "deletedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who deleted the record"
+    }
+  ]
+}

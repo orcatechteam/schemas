@@ -1,0 +1,32 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.sensor.line",
+  "doc": "A pair of two sensors that compose a segment within a sensor line",
+  "name": "segment",
+  "fields": [{
+      "name": "order",
+      "type": "int",
+      "doc": "Order number for the current sensor pair. I.e. 0 is the first pair, 1 is the second pair, etc"
+    },
+    {
+      "name": "firstSensor",
+      "type": "int",
+      "doc": "A unique id representing the item (i.e. first sensor in the pair) in the ORCATECH database"
+    },
+    {
+      "name": "secondSensor",
+      "type": "int",
+      "doc": "A unique id representing the item (i.e. second sensor in the pair) in the ORCATECH database"
+    },
+    {
+      "name": "distance",
+      "type": "float",
+      "doc": "Distance between the two sensors measured in centimeters"
+    },
+    {
+      "name": "assumed",
+      "type": "boolean",
+      "doc": "True if the distance is null and was assumed to be 2 feet, false if the distance was measured and entered"
+    }
+  ]
+}

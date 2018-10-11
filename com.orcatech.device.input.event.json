@@ -1,0 +1,20 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.device.input",
+  "name": "event",
+  "doc": "An input event.",
+  "fields": [{
+      "name": "id",
+      "type": "int",
+      "doc": "An input identifier"
+    },
+    {
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "The time in which the input happened"
+    }
+  ]
+}

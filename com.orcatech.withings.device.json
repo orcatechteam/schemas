@@ -1,0 +1,54 @@
+{
+  "type": "record",
+  "namespace" : "com.orcatech.withings",
+  "doc" : "Nokia device information, see https://health.nokia.com",
+  "name" : "device",
+  "fields" : [
+    {
+      "name" : "macaddress",
+      "type" : "string",
+      "doc" : "The true macaddress of the device. This may not always be the broadcasted mac address of the device"
+    },
+    {
+      "name" : "name",
+      "type" : "string",
+      "doc" : "The broadcasted name of the device"
+    },
+    {
+      "name" : "rssi",
+      "type" : ["null","int"],
+      "default": null,
+      "doc" : "The current signal strength of the device"
+    },
+    {
+      "name" : "type",
+      "type" : "int",
+      "doc" : "The unique identifier assigned by Withings for the device type"
+    },
+    {
+      "name" : "battery",
+      "type" : ["null","int"],
+      "default" : null,
+      "doc" : "The current battery level of the device"
+    },
+    {
+      "name" : "firmware",
+      "type" : ["null","int"],
+      "default" : null,
+      "doc" : "The version of the firmware currently on the device"
+    },
+    {
+      "name" : "model",
+      "type" : ["null","int"],
+      "default" : null,
+      "doc" : "The unique identifier assigned to the device's model"
+    },
+    {
+      "name" : "manufacturer",
+      "type" : ["null","int"],
+      "default" : null,
+      "doc" : "The unique identifier assigned to the mannufacturer who made the device"
+    }
+  ]
+}
+

@@ -1,0 +1,44 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.automatic.vehicle",
+  "doc": "A vehicle event measured by the automatic sensor",
+  "name": "event",
+  "fields": [{
+      "name": "type",
+      "type": "string",
+      "doc": "The type of event that occured"
+    },
+    {
+      "name": "lat",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Latitude coordinate of the location"
+    },
+    {
+      "name": "lng",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Longitude coordinate of the location"
+    },
+    {
+      "name": "gForce",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "The g force felt during the event"
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "The time in which the event occured"
+    }
+  ]
+}

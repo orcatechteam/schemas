@@ -1,0 +1,35 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.withings.device",
+  "doc": "Information about the last checkin from the scale",
+  "name": "checkin",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "A unix timestamp indicating the time at which the checkin occurred"
+    },
+    {
+      "name": "macaddress",
+      "type": "string",
+      "doc": "The macaddress of the withings device"
+    },
+    {
+      "name": "model",
+      "type": "int",
+      "doc": "The withings model id for the device checking in"
+    },
+    {
+      "name": "batteryLevel",
+      "type": "int",
+      "doc": "The current battery level as a percentage"
+    },
+    {
+      "name": "firmware",
+      "type": "string",
+      "doc": "The current firmware of the device"
+    }
+  ]
+}

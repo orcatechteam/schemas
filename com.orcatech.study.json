@@ -1,0 +1,119 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech",
+  "doc": "An ORCATECH study is an research study consisting of a subset of subjects who and agreed to participant.",
+  "name": "study",
+  "fields": [{
+      "name": "id",
+      "type": "long",
+      "min": "0",
+      "doc": "The ORCATECH unique identifier"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "regexp": "[a-zA-Z ]+",
+      "doc": "A short descriptive name for the project"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "regexp": "[,a-zA-Z \\.]+",
+      "doc": "The long description of the project"
+    },
+    {
+      "name": "deidentified",
+      "type": "boolean",
+      "doc": "If true, subjects and homes are giving unique identifiers and all PHI fields restricted to empty values disabling input of PHI"
+    },
+    {
+      "name": "projects",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.project"
+      },
+      "doc": "List of projects managing this study"
+    },
+    {
+      "name": "roles",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.role"
+      },
+      "doc": "List of study roles that available to the members"
+    },
+    {
+      "name": "users",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.user"
+      },
+      "doc": "List of study members along with their roles",
+      "history": "com.orcatech.study.userHistory"
+    },
+    {
+      "name": "subjects",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.study.subject"
+      },
+      "doc": "List of study subjects",
+      "history": "com.orcatech.study.subjectHistory"
+    },
+    {
+      "name": "issues",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.issue"
+      },
+      "doc": "Issues raised with the study as a whole. This can be eIRB status, enrollment, etc."
+    },
+    {
+      "name": "adminRole",
+      "type": "com.orcatech.role"
+    },
+    {
+      "name": "defaultRole",
+      "type": "com.orcatech.role"
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "When the record was created"
+    },
+    {
+      "name": "createdBy",
+      "type": "long",
+      "doc": "The com.orcatech.user.id for the user who created the record"
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was updated"
+    },
+    {
+      "name": "updatedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who updated the record"
+    },
+    {
+      "name": "deletedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was deleted"
+    },
+    {
+      "name": "deletedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who deleted the record"
+    }
+  ]
+}

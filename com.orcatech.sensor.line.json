@@ -1,0 +1,35 @@
+ {
+   "type": "record",
+   "namespace": "com.orcatech.sensor",
+   "doc": "Unique sensor line information",
+   "name": "line",
+   "fields": [{
+       "name": "homeID",
+       "type": "int",
+       "doc": "A unique id representing the home in the ORCATECH database"
+     },
+     {
+       "name": "start",
+       "type": "int",
+       "doc": "A unix timestamp in seconds indicating the time at which the sensor line was added"
+     },
+     {
+       "name": "stop",
+       "type": "int",
+       "doc": "A unix timestamp indicating the time at which the sensor line was removed"
+     },
+     {
+       "name": "areaID",
+       "type": "int",
+       "doc": "A unique id from the ORCATECH database representing the area in which the sensor line is monitoring"
+     },
+     {
+       "name": "segments",
+       "type": {
+         "type": "array",
+         "items": "com.orcatech.sensor.line.segment"
+       },
+       "doc": "List of all the sensor pairs in the sensor line"
+     }
+   ]
+ }

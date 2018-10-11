@@ -1,0 +1,27 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.qualtrics.question",
+  "name": "choice",
+  "doc": "Information about a question choice.",
+  "fields": [{
+      "name": "recodeValue",
+      "type": "string",
+      "doc": "No description provided"
+    },
+    {
+      "name": "variableName",
+      "type": "string",
+      "doc": "No description provided"
+    },
+    {
+      "name": "text",
+      "type": "string",
+      "doc": "No description provided"
+    },
+    {
+      "name": "exclusive",
+      "type": "boolean",
+      "doc": "No description provided"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.neuropsych.imagerecog",
+  "doc": "The context and coordinate information about a user's selection",
+  "name": "selection",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "A timestamp representing time of selection."
+    },
+    {
+      "name": "pickedCoord",
+      "type": "com.orcatech.neuropsych.imagerecog.coord",
+      "doc": "The coordinate picked by the user."
+    },
+    {
+      "name": "correctCoord",
+      "type": "com.orcatech.neuropsych.imagerecog.coord",
+      "doc": "The coordinate of the displayed image."
+    },
+    {
+      "name": "correct",
+      "type": "bool",
+      "doc": "True if the user selected the correct answer, false otherwise."
+    }
+  ]
+}

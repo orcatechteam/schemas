@@ -1,0 +1,40 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.algorithms.walkingSpeed",
+  "doc": "Calibration parameters (i.e. deltaX and C) used to calculate walkingSpeed.speed and metadata about the estimation of the calibration parameters",
+  "name": "calibration",
+  "fields": [{
+      "name": "c",
+      "type": "float",
+      "doc": "Calibration parameter (in cm/s) that is the speed a person would have to walk in order for the sensors to register time differences equal to the average time differences calculated from the traning data set"
+    },
+    {
+      "name": "numberDays",
+      "type": "int",
+      "doc": "Number of days that the walks were taken from to calculate the calibration parameters deltaX and C"
+    },
+    {
+      "name": "numberWalks",
+      "type": "int",
+      "doc": "Number of walks used to calculate the calibration parameters deltaX and C"
+    },
+    {
+      "name": "thresholdType",
+      "type": "int",
+      "doc": "Type of threshold used for generating the calibration parameters deltaX and C (0 -> DAYS || 1-> NUMBER OF CANDIDATE WALKS)"
+    },
+    {
+      "name": "threshold",
+      "type": "int",
+      "doc": "Threshold for the number of walks used or the number of days that the walks were taken from to calculate the calibration parameters deltaX and C"
+    },
+    {
+      "name": "segments",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.algorithms.lineCalibration.segment"
+      },
+      "doc": "Series of com.orcatech.sensor.line.segment objects that contain the deltaX calibration parameter"
+    }
+  ]
+}

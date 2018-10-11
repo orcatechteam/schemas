@@ -1,0 +1,57 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.algorithms",
+  "doc": "Estimated walking speeds calculated from the walking speed algorithm",
+  "name": "walkingSpeed",
+  "fields": [{
+      "name": "homeID",
+      "type": "int",
+      "doc": "A unique id representing the home in the ORCATECH database"
+    },
+    {
+      "name": "areaID",
+      "type": "int",
+      "doc": "A unique id from the ORCATECH database representing the area in which the sensor line is monitoring"
+    },
+    {
+      "name": "type",
+      "type": "int",
+      "doc": "Numerically sequenced firings through the sensor line (i.e. 1234 or 4321)"
+    },
+    {
+      "name": "direction",
+      "type": "int",
+      "doc": "Indicates the direction of the pass where 0 is 'forward' and 1 is 'backward' so that 1234 would be 'forward'."
+    },
+    {
+      "name": "stamp",
+      "type": "int",
+      "doc": "A unix timestamp in seconds indicating the time at which the walkingSpeed.speed pass occurred"
+    },
+    {
+      "name": "speed",
+      "type": "float",
+      "doc": "Speed at which the subject walked through the walkingSpeed.type in cm/s"
+    },
+    {
+      "name": "calibration",
+      "type": "com.orcatech.algorithms.walkingSpeed.calibration",
+      "doc": "Calibration parameters (i.e. deltaX and C) used to calculate walkingSpeed.speed and metadata about the estimation of the calibration parameters"
+    },
+    {
+      "name": "parameters",
+      "type": "com.orcatech.algorithms.walkingSpeed.parameters",
+      "doc": "Parameters used calculate walkingSpeed.speed and to create the model used for determining which walkingSpeed.speed are valid"
+    },
+    {
+      "name": "line",
+      "type": "com.orcatech.sensor.line",
+      "doc": "The sensor line that the pass came from"
+    },
+    {
+      "name": "segments",
+      "type": "com.orcatech.algorithms.walkSegment",
+      "doc": "Series of com.orcatech.sensor.line.segment firings that compose the walk candidate"
+    }
+  ]
+}

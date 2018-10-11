@@ -1,0 +1,60 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.automatic.user",
+  "doc": "Additional information about the user / phone",
+  "name": "metadata",
+  "fields": [{
+      "name": "url",
+      "type": "string",
+      "doc": "User metadata URI"
+    },
+    {
+      "name": "userURL",
+      "type": "string",
+      "doc": "User URI"
+    },
+    {
+      "name": "firmwareVersion",
+      "type": "string",
+      "doc": "The firmware version of ???"
+    },
+    {
+      "name": "appVersion",
+      "type": "string",
+      "doc": "The Automatic App version on the phone used for setup"
+    },
+    {
+      "name": "osVersion",
+      "type": "string",
+      "doc": "The OS version of the phone used for setup"
+    },
+    {
+      "name": "deviceType",
+      "type": "string",
+      "doc": "Device type of ???"
+    },
+    {
+      "name": "phonePlatform",
+      "type": "string",
+      "doc": "The platform of the phone used for setup"
+    },
+    {
+      "name": "isLastestAppVersion",
+      "type": "boolean",
+      "doc": "Latest app version installed [scope:user:profile]"
+    },
+    {
+      "name": "isStaff",
+      "type": "bool",
+      "doc": "True if the user an Automatic staff user [scope:user:profile]"
+    },
+    {
+      "name": "authenticatedClients",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "List of clients that this user has authorized through OAuth [scope:user:profile]"
+    }
+  ]
+}

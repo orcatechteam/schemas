@@ -1,0 +1,66 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.location",
+  "doc": "A physical location or space for living.",
+  "name": "dwelling",
+  "fields": [{
+      "name": "id",
+      "type": "long",
+      "doc": "The ORCATECH unique identifier"
+    },
+    {
+      "name": "apt",
+      "type": "string",
+      "doc": "If the location is an apartment or condo, this is the building number."
+    },
+    {
+      "name": "location",
+      "type": "com.orcatech.location",
+      "doc": "The location information pertaining to the home. This includes the address, city, state, etc"
+    },
+    {
+      "name": "project",
+      "type": "com.orcatech.project",
+      "doc": "The project who created and owns this home"
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "When the record was created"
+    },
+    {
+      "name": "createdBy",
+      "type": "long",
+      "doc": "The com.orcatech.user.id for the user who created the record"
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was updated"
+    },
+    {
+      "name": "updatedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who updated the record"
+    },
+    {
+      "name": "deletedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was deleted"
+    },
+    {
+      "name": "deletedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who deleted the record"
+    }
+  ]
+}

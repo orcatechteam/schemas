@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.emfit",
+  "doc": "Heart rate variability root mean square of successive differences",
+  "name": "hrvrmssd",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "Time of measurement"
+    },
+    {
+      "name": "lowFrequency",
+      "type": "int",
+      "doc": "The low frequency measured in the window"
+    },
+    {
+      "name": "highFrequency",
+      "type": "int",
+      "doc": "The high frequence measured in the window"
+    },
+    {
+      "name": "rmssd",
+      "type": "int",
+      "doc": "root mean square of successive differences"
+    }
+  ]
+}

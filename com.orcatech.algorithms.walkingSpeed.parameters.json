@@ -1,0 +1,57 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.algorithms.walkingSpeed",
+  "doc": "Parameters used calculate walkingSpeed.speed and to create the model used for determining which walkingSpeed.speed are valid",
+  "name": "parameters",
+  "fields": [{
+      "name": "residualCutoff",
+      "type": "float",
+      "doc": "Only take walks with residuals less than this cutoff (which is unitless)"
+    },
+    {
+      "name": "nearestNeighbor",
+      "type": "int",
+      "doc": "Number of nearest neighbor residuals used when calculating the standard deviations"
+    },
+    {
+      "name": "nearestNeighborTrim",
+      "type": "float",
+      "doc": "Fraction of nearest neighbor residuals to trim when calculating the standard deviations"
+    },
+    {
+      "name": "modelSpeedMin",
+      "type": "float",
+      "doc": "Minimum walking speed (in cm/s) allowed when creating the model (below this people start shuffling)"
+    },
+    {
+      "name": "modelSpeedMax",
+      "type": "float",
+      "doc": "Maximum walking speed (in cm/s) allowed when creating the model"
+    },
+    {
+      "name": "minFitPoints",
+      "type": "int",
+      "doc": "Minimum number of walking speed estimates needed to create a model"
+    },
+    {
+      "name": "numberModelStarts",
+      "type": "int",
+      "doc": "Number of restarts used when finding the optimized model parameters"
+    },
+    {
+      "name": "k",
+      "type": "float",
+      "doc": "Multiple (unitless) of standard deviations allowed for residual error"
+    },
+    {
+      "name": "rho",
+      "type": "float",
+      "doc": "Multiplicative factor used in walking speed calculation empirically determined using data from a GAIT mat"
+    },
+    {
+      "name": "numberSpeeds",
+      "type": "int",
+      "doc": "Number of walks used to create the model used for determining which walking speeds are valid"
+    }
+  ]
+}

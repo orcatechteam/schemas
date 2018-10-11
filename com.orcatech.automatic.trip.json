@@ -1,0 +1,194 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.automatic",
+  "doc": "Trip A trip is created when a vehicle is understood to have one full cycle of ignition:on to ignition:off. In some vehicles, these signals must be inferred. Trips are the most commonly used objects in the API. They contain a wealth of metadata about a vehicle's usage history and a user's behavior. At present, one write is possible: adding a tag to a trip. The mobile apps have a feature that allows combining of trips that happened within 15 minutes of each other. This merge is applied on the apps' frontend only and does not affect the REST objects, which would show the multiple 'segments' as distinct and unrelated entities. Trips must have a minimum distance of 10 meters or they will be discarded as invalid. In the United States, fuel price is retrieved automatically based on location at the time of fillup. If a car does not report its fuel level, then each trip's cost will be estimated using prevailing local prices. Outside the United States, our fuel costing will currently provide unreliable results. This will be improved in the future. For the time being, it is recommended to use fuel volume as the reliable metric instead.",
+  "name": "trip",
+  "fields": [{
+      "name": "id",
+      "type": "string",
+      "doc": "Unique identifier for the trip given by Automatic"
+    },
+    {
+      "name": "vehicle",
+      "type": "com.orcatech.automatic.vehicle",
+      "doc": "Vehicle used on trip"
+    },
+    {
+      "name": "startedAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "Started At [scope:trip]"
+    },
+    {
+      "name": "endedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      }],
+      "doc": "Ended At [scope:trip]"
+    },
+    {
+      "name": "distance",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Distance of the trip in meters"
+    },
+    {
+      "name": "duration",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Duration of the trip in seconds"
+    },
+    {
+      "name": "startLoc",
+      "type": "com.orcatech.automatic.location",
+      "doc": "Starting location of the trip"
+    },
+    {
+      "name": "endLoc",
+      "type": "com.orcatech.automatic.location",
+      "doc": "Ending location of the trip"
+    },
+    {
+      "name": "startAddr",
+      "type": "com.orcatech.automatic.address",
+      "doc": "Starting address of the trip"
+    },
+    {
+      "name": "endAddr",
+      "type": "com.orcatech.automatic.address",
+      "doc": "Ending address of the trip"
+    },
+    {
+      "name": "path",
+      "type": "string",
+      "doc": "Encoded path data of the trip"
+    },
+    {
+      "name": "fuelCost",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Fuel cost in dollars"
+    },
+    {
+      "name": "fuelVol",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Amount of fuel used in meters cubed"
+    },
+    {
+      "name": "avgKMpL",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Fuel efficiency in km per liter"
+    },
+    {
+      "name": "avgFromEPAKMpL",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Fuel efficiency in km per liter according to the EPA"
+    },
+    {
+      "name": "scoreEvents",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Driving score for events"
+    },
+    {
+      "name": "scoreSpeeding",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Driving score for speeding"
+    },
+    {
+      "name": "hardBrakes",
+      "type": "int",
+      "doc": "Number of hard brakes"
+    },
+    {
+      "name": "hardAccels",
+      "type": "int",
+      "doc": " Number of hard accelerations"
+    },
+    {
+      "name": "durOver70",
+      "type": "int",
+      "doc": "Duration of trip spend over 70 mph in seconds"
+    },
+    {
+      "name": "durOver75",
+      "type": "int",
+      "doc": "Duration of trip spend over 75 mph in seconds"
+    },
+    {
+      "name": "durOver80",
+      "type": "int",
+      "doc": "Duration of trip spend over 80 mph in seconds"
+    },
+    {
+      "name": "idlingTime",
+      "type": "int",
+      "doc": "Duration of trip spent idling in seconds"
+    },
+    {
+      "name": "vehicleEvents",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.automatic.vehicle.event"
+      },
+      "doc": "Vehicle events that occured during trip"
+    },
+    {
+      "name": "timezoneStart",
+      "type": "string",
+      "doc": "Timezone at the start of the trip"
+    },
+    {
+      "name": "timezoneEnd",
+      "type": "string",
+      "doc": "Timezone at the end of the trip"
+    },
+    {
+      "name": "cityFraction",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Fraction of time spent in the city"
+    },
+    {
+      "name": "highwayFraction",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Fraction of time spent on the highway"
+    },
+    {
+      "name": "nightDrivingFraction",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Fraction of time spent driving at night"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.aggregate",
+  "doc": "A daily rollup of all the information collected about a subject as well as the state of the subject",
+  "name": "daily",
+  "fields": [{
+      "name": "date",
+      "type": {
+        "type": "long",
+        "logicalType": "date"
+      },
+      "doc": "A unix timestamp representing the day"
+    },
+    {
+      "name": "timezone",
+      "type": "string",
+      "doc": "The local timezone where the subject is living"
+    },
+    {
+      "name": "subject",
+      "type": "com.orcatech.subject",
+      "doc": "Information about the subject from who the data was collect"
+    },
+    {
+      "name": "home",
+      "type": "com.orcatech.home",
+      "doc": "Information about the home where the subject was residing on this date"
+    },
+    {
+      "name": "sensorAlerts",
+      "doc": "Alerts indicating a potential problem with the sensors that collected the day's data",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.sensor.alert"
+      }
+    },
+    {
+      "name": "sensorPresence",
+      "doc": "Presence detection events collected by sensors deployed within the subject's home",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.sensor.presence"
+      }
+    },
+    {
+      "name": "sensorContacts",
+      "doc": "Open/close detection events collected by sensors deployed within the subject's home",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.sensor.contact"
+      }
+    },
+    {
+      "name": "sensorHeartbeats",
+      "doc": "Sensor heartbeat events transmitted by sensors deployed within the subject's home",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.sensor.heartbeat"
+      }
+    }
+  ]
+}

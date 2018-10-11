@@ -1,0 +1,33 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.automatic.user",
+  "doc": "Information about the vehicle the sensor is plugged into",
+  "name": "profile",
+  "fields": [{
+      "name": "url",
+      "type": "string",
+      "doc": "User profile URI"
+    },
+    {
+      "name": "userURL",
+      "type": "string",
+      "doc": "User URI"
+    },
+    {
+      "name": "dateJoined",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "The date the user was created"
+    },
+    {
+      "name": "taggedLocations",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.automatic.address"
+      },
+      "doc": "Tagged locations (i.e. home/work)"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech",
+  "doc": "An ORCATECH application log line.",
+  "name": "log",
+  "fields": [{
+    "name": "application",
+    "type": "string",
+    "doc": "The application which created this log"
+  }, {
+    "name": "stamp",
+    "type": {
+      "type": "long",
+      "logicalType": "timestamp-millis"
+    },
+    "doc": "A unix timestamp indicating the time at which the log was created by the application"
+  }, {
+    "name": "hostname",
+    "type": "string",
+    "doc": "The name of the host in which the application is running on"
+  }, {
+    "name": "level",
+    "type": "int",
+    "doc": "The importance level of the log 1=Error,2=Warn,3=Info,...9=Test"
+  }, {
+    "name": "namespace",
+    "type": "string",
+    "doc": "The namespace of the application. i.e. test, beta, production, etc..."
+  }, {
+    "name": "values",
+    "type": {
+      "type": "map",
+      "values": "string"
+    },
+    "doc": "A set of key value pairs indicating the state of the application as well as any messages"
+  }]
+}

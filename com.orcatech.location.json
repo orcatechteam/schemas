@@ -1,0 +1,96 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech",
+  "doc": "A home containing an individual who participates in an ORCATECH affiliated study. The home should represent a real physical location and not an abstract space",
+  "name": "location",
+  "fields": [{
+      "name": "id",
+      "type": "long",
+      "doc": "The ORCATECH unique identifier"
+    },
+    {
+      "name": "address",
+      "type": "string",
+      "doc": "The street number and street name of the location"
+    },
+    {
+      "name": "timezone",
+      "type": "string",
+      "doc": "The timezone of the location in the form `America/Los_Angeles`"
+    },
+    {
+      "name": "lat",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "The latitude coordinate of the location."
+    },
+    {
+      "name": "lng",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 8,
+        "scale": 6
+      },
+      "doc": "The longitude coordinate of the location."
+    },
+    {
+      "name": "project",
+      "type": "com.orcatech.project",
+      "doc": "The project who created and owns this home"
+    },
+    {
+      "name": "city",
+      "type": "com.orcatech.location.city",
+      "doc": "The city or town where this location resides"
+    },
+    {
+      "name": "type",
+      "type": "com.orcatech.location.type",
+      "doc": "The type of location. This seperates apartments, single family housing, townhomes, etc"
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "When the record was created"
+    },
+    {
+      "name": "createdBy",
+      "type": "long",
+      "doc": "The com.orcatech.user.id for the user who created the record"
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was updated"
+    },
+    {
+      "name": "updatedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who updated the record"
+    },
+    {
+      "name": "deletedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was deleted"
+    },
+    {
+      "name": "deletedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who deleted the record"
+    }
+  ]
+}

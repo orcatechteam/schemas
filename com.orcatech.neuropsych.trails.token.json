@@ -1,0 +1,22 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.neuropsych.trails",
+  "doc": "A token displayed on the Trails Making test. This is a outlined circle with text displayed in the center of the circle.",
+  "name": "token",
+  "fields": [{
+      "name": "text",
+      "type": "string",
+      "doc": "The text display in the center of the token"
+    },
+    {
+      "name": "x",
+      "type": "int",
+      "doc": "The center of the token in the X direction in pixels relative to the dimensions of the task container"
+    },
+    {
+      "name": "y",
+      "type": "int",
+      "doc": "The center of the token in the X direction in pixels relative to the dimensions of the task container"
+    }
+  ]
+}

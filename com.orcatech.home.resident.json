@@ -1,0 +1,66 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.home",
+  "doc": "A generic resident in the home. Only track whether the person is in the home or not. This is to be no PHI related to this person.",
+  "name": "resident",
+  "fields": [{
+      "name": "id",
+      "type": "long",
+      "doc": "The ORCATECH unique identifier"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "A short descriptive name of the application"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "doc": "A short name for the type of resident such as family member, caregiver, etc"
+    },
+    {
+      "name": "home",
+      "type": "com.orcatech.home",
+      "doc": "The home where this resident resides"
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "When the record was created"
+    },
+    {
+      "name": "createdBy",
+      "type": "long",
+      "doc": "The com.orcatech.user.id for the user who created the record"
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was updated"
+    },
+    {
+      "name": "updatedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who updated the record"
+    },
+    {
+      "name": "deletedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was deleted"
+    },
+    {
+      "name": "deletedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who deleted the record"
+    }
+  ]
+}

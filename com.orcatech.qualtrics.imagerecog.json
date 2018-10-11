@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.qualtrics",
+  "doc": "Captured events and timing for an Image Recognition test administered via a Qualtrics survey",
+  "name": "imagerecog",
+  "fields": [{
+      "name": "url",
+      "type": "string",
+      "doc": "The Qualtrics survey url. This should have the Qualtrics survey and recipient id"
+    },
+    {
+      "name": "task",
+      "type": "com.orcatech.neuropsych.imagerecog.task",
+      "doc": "Data captured by the image recogition task."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.sensor",
+  "doc": "A heartbeat indicating that the sensor is connected and working",
+  "name": "heartbeat",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "A unix timestamp indicating the time at which the heartbeat occurred"
+    },
+    {
+      "name": "itemID",
+      "type": "int",
+      "doc": "A unique id representing the item in the ORCATECH database"
+    },
+    {
+      "name": "interval",
+      "type": "int",
+      "doc": "The expected interval between heartbeats"
+    }
+  ]
+}

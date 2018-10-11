@@ -1,0 +1,44 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.medtracker",
+  "doc": "Door state history report from the ORCATECH Medtracker",
+  "name": "report",
+  "fields": [{
+      "name": "status",
+      "type": "com.orcatech.medtracker.status",
+      "doc": "The ORCATECH medtracker device that collected the data."
+    },
+    {
+      "name": "size",
+      "type": "int",
+      "default": 0,
+      "doc": "The number of recorded states. This should be the length of the state array."
+    },
+    {
+      "name": "deviceTime",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "default": 0,
+      "doc": "The current time of the device as a unix timestamp in seconds."
+    },
+    {
+      "name": "systemTime",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "default": 0,
+      "doc": "The current time of the system which collected the report as a unix timestamp in seconds."
+    },
+    {
+      "name": "states",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.medtracker.report.state"
+      },
+      "doc": "The door state history of the medtracker."
+    }
+  ]
+}

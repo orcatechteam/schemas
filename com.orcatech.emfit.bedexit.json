@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.emfit",
+  "doc": "Periods spent out of the bed",
+  "name": "bedexit",
+  "fields": [{
+      "name": "start",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "Start time of out of bed period"
+    },
+    {
+      "name": "end",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "End time of out of bed period"
+    }
+  ]
+}

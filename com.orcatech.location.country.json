@@ -1,0 +1,61 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.location",
+  "doc": "A country containing states and cities",
+  "name": "country",
+  "fields": [{
+      "name": "id",
+      "type": "int",
+      "doc": "The ORCATECH unique identifier"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "The country's full name"
+    },
+    {
+      "name": "abbr",
+      "type": "string",
+      "doc": "An abbreviated name for the country"
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "When the record was created"
+    },
+    {
+      "name": "createdBy",
+      "type": "long",
+      "doc": "The com.orcatech.user.id for the user who created the record"
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was updated"
+    },
+    {
+      "name": "updatedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who updated the record"
+    },
+    {
+      "name": "deletedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was deleted"
+    },
+    {
+      "name": "deletedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who deleted the record"
+    }
+  ]
+}

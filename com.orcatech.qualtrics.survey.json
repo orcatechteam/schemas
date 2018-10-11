@@ -1,0 +1,36 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.qualtrics",
+  "doc": "Captured events, questions and answers from the a survery administered by Qualtrics",
+  "name": "survey",
+  "fields": [{
+      "name": "recipientID",
+      "type": "string",
+      "doc": "The Qualtrics recipient ID used to pull the associated suvery questions and responses."
+    },
+    {
+      "name": "start",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "The timestamp in which the survey was started"
+    },
+    {
+      "name": "stop",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "The timestamp in which the survey was started"
+    },
+    {
+      "name": "questions",
+      "type": {
+        "type": "map",
+        "values": "string"
+      },
+      "doc": "A map where the key identifies the question and the value represents the answer"
+    }
+  ]
+}

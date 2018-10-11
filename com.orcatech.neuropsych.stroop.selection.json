@@ -1,0 +1,48 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.neuropsych.stroop",
+  "doc": "A selection event with context relative the Stroop test being administered",
+  "name": "selection",
+  "fields": [{
+      "name": "type",
+      "type": "string",
+      "doc": "The type of the selection. Possible values as `Success` for matching colors and `Error` for selecting dissimiliar colors."
+    },
+    {
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "A timestamp indicating the time at which the event took place."
+    },
+    {
+      "name": "index",
+      "type": "int",
+      "doc": "The array index of this element in the order of elements to be shown to the user"
+    },
+    {
+      "name": "word",
+      "type": "string",
+      "doc": "The text being shown to the user"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "doc": "The color of the text being shown to the user"
+    },
+    {
+      "name": "start",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "A timestamp indicating when the colored word was first shown to the user"
+    },
+    {
+      "name": "selectedColor",
+      "type": "string",
+      "doc": "The text color of the button selected by the user"
+    }
+  ]
+}

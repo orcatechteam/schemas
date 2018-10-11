@@ -1,0 +1,53 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.algorithms",
+  "doc": "Sequential sensor line firings which represent a candidate for a walk",
+  "name": "walkCandidate",
+  "fields": [{
+      "name": "type",
+      "type": "int",
+      "doc": "Numerically sequenced firings through the sensor line (i.e. 1234 or 4321)"
+    },
+    {
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "A unix timestamp in seconds indicating the time at which the pass occurred"
+    },
+    {
+      "name": "direction",
+      "type": "int",
+      "doc": "Indicates the direction of the pass where 0 is 'forward' and 1 is 'backward' so that 1234 would be 'forward'."
+    },
+    {
+      "name": "line",
+      "type": "com.orcatech.sensor.line",
+      "doc": "The sensor line that the pass came from"
+    },
+    {
+      "name": "segments",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.algorithms.walkSegment"
+      },
+      "doc": "Series of com.orcatech.sensor.line.segment firings that compose the walk candidate"
+    },
+    {
+      "name": "duration",
+      "type": "float",
+      "doc": "How long it took for the subject to walk through the walkCandidate.type in seconds"
+    },
+    {
+      "name": "distance",
+      "type": "float",
+      "doc": "Distance between the first and last sensor of the walkCandidate.type in centimeters"
+    },
+    {
+      "name": "speed",
+      "type": "float",
+      "doc": "Speed at which the subject walked through the walkCandidate.type in cm/s"
+    }
+  ]
+}

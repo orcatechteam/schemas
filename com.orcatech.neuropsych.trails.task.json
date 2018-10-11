@@ -1,0 +1,36 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.neuropsych.trails",
+  "doc": "Captured events and timing for a Trail Making test administered via a web browser",
+  "name": "task",
+  "fields": [{
+      "name": "start",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "A timestamp indicating the time at which the task began. The task is shown and events are recorded at this time."
+    },
+    {
+      "name": "stop",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "A timestamp indicating the time at which the task ended such that the user could no longer create additional events."
+    },
+    {
+      "name": "part",
+      "type": "string",
+      "doc": "The type of Trails Making test administered. The format is A or B concatinated with the number of circles"
+    },
+    {
+      "name": "events",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.neuropsych.trails.selection"
+      },
+      "doc": "A series of captured selections that occured during the test. These include correct, incorrect and missed clicks."
+    }
+  ]
+}

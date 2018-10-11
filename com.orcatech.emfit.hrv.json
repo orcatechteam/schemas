@@ -1,0 +1,67 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.emfit",
+  "doc": "Heart rate variability information for Evening and Morning. There are two version of the data. BasedFirstLast90: based on first and last 90 mins of 3 min RMSSD datapoints, and also whole night RMSSD graph which included the integratingRecovery field. BasedWholeNight: ased on linear fit of whole night RMSSD datapoints",
+  "name": "hrv",
+  "fields": [{
+      "name": "start",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "evening value of RMSSD, average values within first 90 minutes of bed presence"
+    },
+    {
+      "name": "end",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "morning value of RMSSD, average values within last 90 minutes of bed presence"
+    },
+    {
+      "name": "totalRecovery",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "endRMSSD-startRMSSD"
+    },
+    {
+      "name": "recoveryRatio",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "endRMSSD/startRMSSD"
+    },
+    {
+      "name": "recoveryRate",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "totalRecovery/duration of sleep (in hours)"
+    },
+    {
+      "name": "integratingRecovery",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "area under curve formed by all night 3 min RMSSD dots only present in BasedFirstLast90"
+    }
+  ]
+}

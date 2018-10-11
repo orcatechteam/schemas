@@ -1,0 +1,82 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.automatic",
+  "doc": "Information about the vehicle the sensor is plugged into",
+  "name": "vehicle",
+  "fields": [{
+      "name": "id",
+      "type": "string",
+      "doc": "Unique identifier for the vehicle given by Automatic"
+    },
+    {
+      "name": "vin",
+      "type": "string",
+      "doc": "Vehicle Identification number"
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "CreatedAt [scope:public scope:vehicle:profile]"
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      }],
+      "doc": "UpdatedAt [scope:public scope:vehicle:profile]"
+    },
+    {
+      "name": "make",
+      "type": "string",
+      "doc": "Make (Honda, Chevy, etc.,)"
+    },
+    {
+      "name": "model",
+      "type": "string",
+      "doc": "Model (Civic, F150, etc.,)"
+    },
+    {
+      "name": "submodel",
+      "type": "string",
+      "doc": "Submodel (EX, Deluxe, etc.,)"
+    },
+    {
+      "name": "year",
+      "type": "int",
+      "doc": "Year [scope:public, scope:vehicle:profile]"
+    },
+    {
+      "name": "displayName",
+      "type": "string",
+      "doc": "Nickname given by the user"
+    },
+    {
+      "name": "batteryVoltage",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Detected battery voltage"
+    },
+    {
+      "name": "fuelLevelPercent",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal"
+      },
+      "doc": "Fuel level percent is not available on all cars"
+    },
+    {
+      "name": "activeDTCs",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.automatic.vehicle.mil"
+      },
+      "doc": "Currently active malfunction indicator lights"
+    }
+  ]
+}

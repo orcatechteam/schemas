@@ -1,0 +1,43 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.timercap",
+  "doc": "TimerCap close records collected from either iSorts or iCaps, see https://timercap.com",
+  "name": "closeEventRecord",
+  "fields": [{
+      "name": "device",
+      "type": "com.orcatech.timercap.device",
+      "doc": "The TimerCap device that collected the data"
+    },
+    {
+      "name": "recordNumber",
+      "type": "int",
+      "doc": "This is written LAST_RECORD_NUMBER in a range from 1- 65535. The LAST_RECORD_NUMBER is set to ZERO when the firmware is burned, and then it increments at each CLOSE, and is then recorded in this record."
+    },
+    {
+      "name": "weekDay",
+      "type": "int",
+      "default": 0,
+      "doc": "The day of the week of the door which triggered the event. See https://golang.org/pkg/time/#Weekday"
+    },
+    {
+      "name": "timestamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "default": 0,
+      "doc": "The time at which the door was either closed or opened with resolution only in seconds."
+    },
+    {
+      "name": "doorOpen",
+      "type": "boolean",
+      "default": false,
+      "doc": "Whether or not the event was created when a door was opened."
+    },
+    {
+      "name": "boxState",
+      "type": "int",
+      "doc": "A bitmask describing the state of all the doors. A binary representation describes the doors as either open (1) or closed (0) where the first bit in big endian representation represents Saturday and the seventh bit represents Sunday. BoxState is a uint16 and therefore can represent a 2-row pillbox where the 8th bit represents Saturday and the 14th bit represents Sunday in the second row."
+    }
+  ]
+}

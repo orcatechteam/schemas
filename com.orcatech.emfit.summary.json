@@ -1,0 +1,265 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.emfit",
+  "doc": "Sleep Summary data is POST--ed by webhook in JSON format to consumers once the user bed presence period is ended. Approximate delay between actual bed exit that starts period data processing, to the delivery of the Sleep Summary data, is at about 5--20 minutes.Note that if user return to bed within following 20 minutes after bed exit and the Night/Day setting is not used, after the next bed exit the same data is send again from the whole sleep period. You need to have means to delete doubled data. Sleep summary data is associated with a particular device. It contains information about device, presence period and all calculated dataof the period.",
+  "name": "summary",
+  "fields": [{
+      "name": "id",
+      "type": "string",
+      "doc": "Presence period unique identifier"
+    },
+    {
+      "name": "device",
+      "type": "string",
+      "doc": "Device serial number, unique identifier"
+    },
+    {
+      "name": "userID",
+      "type": "int",
+      "doc": "Unique identifier of the user who is linked to the account"
+    },
+    {
+      "name": "from",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "Start time of presence period"
+    },
+    {
+      "name": "to",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "End time of presence period"
+    },
+    {
+      "name": "duration",
+      "type": "int",
+      "doc": "Duration of the period in seconds"
+    },
+    {
+      "name": "fromGMTOffset",
+      "type": "int",
+      "doc": "user time offset to GMT time, minutes"
+    },
+    {
+      "name": "durationInBed",
+      "type": "int",
+      "doc": "total duration of presence period, seconds"
+    },
+    {
+      "name": "durationAwake",
+      "type": "int",
+      "doc": "sum of time at awake state during sleep period, seconds"
+    },
+    {
+      "name": "durationInSleep",
+      "type": "int",
+      "doc": "total time at sleep during sleep period, seconds"
+    },
+    {
+      "name": "durationInREM",
+      "type": "int",
+      "doc": "total time spent at REM sleep during presence period, seconds"
+    },
+    {
+      "name": "durationInLight",
+      "type": "int",
+      "doc": "total time spent at LIGHT sleep during presence period, seconds"
+    },
+    {
+      "name": "durationInDeep",
+      "type": "int",
+      "doc": "total time spent at DEEP sleep during presence period, seconds"
+    },
+    {
+      "name": "durationSleepOnset",
+      "type": "int",
+      "doc": "time from presence period start to fall asleep"
+    },
+    {
+      "name": "durationBedExit",
+      "type": "int",
+      "doc": "total duration of time spent out of the bed during presence period"
+    },
+    {
+      "name": "awakings",
+      "type": "int",
+      "doc": "number of awakenings"
+    },
+    {
+      "name": "bedExitCount",
+      "type": "int",
+      "doc": "number of bed exits"
+    },
+    {
+      "name": "tossNTurnCount",
+      "type": "int",
+      "doc": "total number of tossnturns"
+    },
+    {
+      "name": "avgHR",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "whole night (presence period) average of heart rate, beats per minute"
+    },
+    {
+      "name": "minHR",
+      "type": "int",
+      "doc": "lowest 3 min average heart rate (same as resting HR) from whole night, beats per minute"
+    },
+    {
+      "name": "maxHR",
+      "type": "int",
+      "doc": "highest3 min average heart rate from whole night, beats per minute"
+    },
+    {
+      "name": "hrvScore",
+      "type": "int",
+      "doc": "morning value of HRV, RMSSD"
+    },
+    {
+      "name": "hrvLF",
+      "type": "int",
+      "doc": "low frequency part of HRV spectral distribution.  NOTE: hrv_lf + hrv_hf = 100"
+    },
+    {
+      "name": "hrvHF",
+      "type": "int",
+      "doc": "high frequency part of HRV spectral distribution"
+    },
+    {
+      "name": "hrvRMSSDData",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.emfit.hrvrmssd"
+      },
+      "doc": "HRV data for whole night, at 3 min intervals [TIMESTAMP, RMSSD, LF, HF]"
+    },
+    {
+      "name": "hrvRMSSDEvening",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "evening value of RMSSD"
+    },
+    {
+      "name": "hrvRMSSDMorning",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "morning value of RMSSD"
+    },
+    {
+      "name": "avgRR",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "whole night (presence period) average of respiration rate, breaths per minute"
+    },
+    {
+      "name": "minRR",
+      "type": "int",
+      "doc": "minimum 3 min average respiration rate from whole night, breaths per minute"
+    },
+    {
+      "name": "maxRR",
+      "type": "int",
+      "doc": "maximum 3 min average respiration rate from whole night, breaths per minute"
+    },
+    {
+      "name": "avgActivity",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 6,
+        "scale": 2
+      },
+      "doc": "whole night average of physical activity, unitless"
+    },
+    {
+      "name": "fmCount",
+      "type": "int",
+      "doc": "fast movements count(over 10 sec periods)."
+    },
+    {
+      "name": "hrvData",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.emfit.hrv"
+      },
+      "doc": "Heart rate variability information for Evening and Morning."
+    },
+    {
+      "name": "fmData",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "long",
+          "logicalType": "timestamp-micros"
+        }
+      },
+      "doc": "timestamps of fast movement occurrences"
+    },
+    {
+      "name": "calcData",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.emfit.calc"
+      },
+      "doc": "no description"
+    },
+    {
+      "name": "sleepData",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.emfit.sleep"
+      },
+      "doc": "no description"
+    },
+    {
+      "name": "bedExitData",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.emfit.bedexit"
+      },
+      "doc": "Periods out of the bed"
+    },
+    {
+      "name": "tossNTurnData",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "long",
+          "logicalType": "timestamp-micros"
+        }
+      },
+      "doc": "occurrence times of toss and turns (bigger movements)"
+    },
+    {
+      "name": "checked",
+      "type": "int",
+      "doc": "no description"
+    },
+    {
+      "name": "sleepScore",
+      "type": "int",
+      "doc": "compound index of sleep quality (0-100). Constitutes from amount of sleep, deep and rem and awakenings"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "type": "record",
+  "namespace" : "com.orcatech.withings",
+  "doc" : "Nokia account user information, see https://health.nokia.com",
+  "name" : "user",
+  "fields" : [
+    {
+      "name" : "first",
+      "type" : "string",
+      "doc" : "The first name of the user"
+    },
+    {
+      "name" : "last",
+      "type" : "string",
+      "doc" : "The last name of the user"
+    },
+    {
+      "name" : "gender",
+      "type" : "int",
+      "doc" : "The gender of the user (0 -> female, 1 -> male)"
+    },
+    {
+      "name" : "birthday",
+      "type" : "long",
+      "doc" : "The birthday of the user as a unix timestamp"
+    },
+    {
+      "name" : "height",
+      "type" : ["null","int"],
+      "default" : null,
+      "doc" : "The height of the user in centimeters"
+    },
+    {
+      "name" : "weight",
+      "type" : ["null","int"],
+      "default" : null,
+      "doc" : "The weight of the user in grams"
+    },
+    {
+      "name" : "withingsId",
+      "type" : ["null","long"],
+      "default" : null,
+      "doc" : "The unique identifier assigned to the user by Withings"
+    }
+  ]
+}
+

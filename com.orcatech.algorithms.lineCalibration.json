@@ -1,0 +1,75 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.algorithms",
+  "doc": "Calibration parameters (i.e. deltax and C) for each sensor line",
+  "name": "lineCalibration",
+  "fields": [{
+      "name": "homeID",
+      "type": "int",
+      "doc": "A unique id representing the home in the ORCATECH database"
+    },
+    {
+      "name": "type",
+      "type": "int",
+      "doc": "Numerically sequenced firings through the sensor line (i.e. 1234 or 4321)"
+    },
+    {
+      "name": "direction",
+      "type": "int",
+      "doc": "Indicates the direction of the pass where 0 is 'forward' and 1 is 'backward' so that 1234 would be 'forward'."
+    },
+    {
+      "name": "segments",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.algorithms.lineCalibration.segment"
+      },
+      "doc": "Series of com.orcatech.sensor.line.segment objects that contain the deltaX calibration parameter"
+    },
+    {
+      "name": "c",
+      "type": "float",
+      "doc": "Calibration parameter (in cm/s) that is the speed a person would have to walk in order for the sensors to register time differences equal to the average time differences calculated from the traning data set"
+    },
+    {
+      "name": "numberDays",
+      "type": "int",
+      "doc": "Number of days that the walks were taken from to calculate the calibration parameters deltaX and C"
+    },
+    {
+      "name": "numberWalks",
+      "type": "int",
+      "doc": "Number of walks used to calculate the calibration parameters deltaX and C"
+    },
+    {
+      "name": "numberSpeeds",
+      "type": "int",
+      "doc": "Number of walks used to create the model used for determining which walking speeds are valid (i.e. the walks used to calculate the calibration parameters deltaX and C)"
+    },
+    {
+      "name": "thresholdType",
+      "type": "int",
+      "doc": "Type of threshold used for generating the calibration parameters deltaX and C (0 -> DAYS || 1-> NUMBER OF CANDIDATE WALKS)"
+    },
+    {
+      "name": "threshold",
+      "type": "int",
+      "doc": "Threshold for the number of walks used or the number of days that the walks were taken from to calculate the calibration parameters deltaX and C"
+    },
+    {
+      "name": "rho",
+      "type": "float",
+      "doc": "Multiplicative factor used in walking speed calculation empirically determined using data from a GAIT mat"
+    },
+    {
+      "name": "parameters",
+      "type": "com.orcatech.algorithms.lineCalibration.parameters",
+      "doc": "Array of parameters used to create the model used for determining which walking speeds are valid (i.e. the walks used to calculate the calibration parameters deltaX and C)"
+    },
+    {
+      "name": "line",
+      "type": "com.orcatech.sensor.line",
+      "doc": "The sensor line that the pass came from"
+    }
+  ]
+}

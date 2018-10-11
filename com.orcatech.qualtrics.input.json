@@ -1,0 +1,25 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.qualtrics",
+  "name": "input",
+  "doc": "The input events captured while the subject was taking a survey.",
+  "fields": [{
+      "name": "url",
+      "type": "string",
+      "doc": "The Qualtrics survey url. This should have the Qualtrics survey and recipient id embeded in it"
+    },
+    {
+      "name": "questionInfo",
+      "type": ["null", {
+        "type": "map",
+        "values": "com.orcatech.qualtrics.question"
+      }],
+      "doc": "The Qualtrics question info as pulled from their JS engine"
+    },
+    {
+      "name": "deviceInput",
+      "type": "com.orcatech.device.input",
+      "doc": "An input event that happened during the survey."
+    }
+  ]
+}

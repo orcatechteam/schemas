@@ -1,0 +1,78 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.medtracker",
+  "doc": "Status report from the ORCATECH Medtracker",
+  "name": "status",
+  "fields": [{
+      "name": "device",
+      "type": "com.orcatech.medtracker.device",
+      "doc": "The ORCATECH medtracker device that collected the data"
+    },
+    {
+      "name": "batterySeconds",
+      "type": "int",
+      "default": 0,
+      "doc": "The number of seconds spent on battery power. This counter is reset when the battery dies or is removed and the device is unplugged."
+    },
+    {
+      "name": "doors",
+      "type": "int",
+      "default": 0,
+      "doc": "￼The number of door events that have been recorded. This counter is reset when the battery dies or is removed and the device is unplugged."
+    },
+    {
+      "name": "firmware",
+      "type": "string",
+      "default": "",
+      "doc": "￼The firmware on the device."
+    },
+    {
+      "name": "nextPanicEnd",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "default": 0,
+      "doc": "When the device is unplugged, it will only power its bluetooth radio during panic periods. This is a unix timestamp in seconds indicating the end of the next panic period."
+    },
+    {
+      "name": "nextPanicStart",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "default": 0,
+      "doc": "When the device is unplugged, it will only power its bluetooth radio during panic periods. This is a unix timestamp in seconds indicating the beginning of the next panic period."
+    },
+    {
+      "name": "power",
+      "type": "string",
+      "default": "external_power",
+      "doc": "This a string representing the source of power. It will be either 'battery_power' or 'external_power'."
+    },
+    {
+      "name": "deviceTime",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "default": 0,
+      "doc": "The current time of the device as a unix timestamp in seconds."
+    },
+    {
+      "name": "systemTime",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "default": 0,
+      "doc": "The current time of the system which collected the status as a unix timestamp in seconds."
+    },
+    {
+      "name": "volts",
+      "type": "int",
+      "default": 1023,
+      "doc": "The voltage being read from the external power source."
+    }
+  ]
+}

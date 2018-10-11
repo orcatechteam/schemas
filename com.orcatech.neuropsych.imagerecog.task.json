@@ -1,0 +1,70 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.neuropsych.imagerecog",
+  "doc": "Captured events and timing for an Image Recognition test administered via a web browser",
+  "name": "task",
+  "fields": [{
+      "name": "displayStart",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "A timestamp representing when the display component was mounted."
+    },
+    {
+      "name": "displayStop",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "A timestamp representing when the display component was unmounted."
+    },
+    {
+      "name": "questionStart",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "A timestamp representing when the question component was mounted."
+    },
+    {
+      "name": "questionStop",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "A timestamp representing when the question component was unmounted."
+    },
+    {
+      "name": "displayedCoord",
+      "type": "com.orcatech.neuropsych.imagerecog.coord",
+      "doc": "The coordinate of the displayed image."
+    },
+    {
+      "name": "selectedCoord",
+      "type": ["null", "com.orcatech.neuropsych.imagerecog.coord"],
+      "doc": "The coordinate selected by the user."
+    },
+    {
+      "name": "correct",
+      "type": ["null", "bool"],
+      "doc": "True if the user selected the correct answer, false is they did not and null if a selection has not been made."
+    },
+    {
+      "name": "grid",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.neuropsych.imagerecog.coord"
+      },
+      "doc": "A array of coordinates outlining the grid shown to the user"
+    },
+    {
+      "name": "selections",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.neuropsych.imagerecog.selection"
+      },
+      "doc": "An array of coordinate selections made by the user. The last element of the array will be the user's final selection. If the array is empty, then no selection was made."
+    }
+  ]
+}

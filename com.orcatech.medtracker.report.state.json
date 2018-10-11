@@ -1,0 +1,22 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.medtracker.report",
+  "doc": "The state of the ORCATECH Medtracker's doors at a given point in time",
+  "name": "state",
+  "fields": [{
+      "name": "doors",
+      "type": "string",
+      "default": "-------",
+      "doc": "The state of each door on the seven day pill box where '-' indicates closed and 'u' indicates open. There should be 7 characteracters in the string but data can be corrupted resulting in strings less than 7 characters long."
+    },
+    {
+      "name": "time",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "default": 0,
+      "doc": "The device time as a unix timestamp in seconds in which the door states where recorded."
+    }
+  ]
+}

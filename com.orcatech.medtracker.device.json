@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.medtracker",
+  "doc": "ORCATECH medtracker device built and designed by Jon Hunt circa 2007",
+  "name": "device",
+  "fields": [{
+    "name": "macaddress",
+    "type": "string",
+    "doc": "The macaddress of the device"
+  }]
+}

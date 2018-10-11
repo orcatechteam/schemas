@@ -1,0 +1,61 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.inventory.item",
+  "doc": "Mapping from ORCATECH inventory item to an vehicle",
+  "name": "vehicle",
+  "fields": [{
+      "name": "id",
+      "type": "long",
+      "doc": "ORCATECH unique identifier"
+    },
+    {
+      "name": "item",
+      "type": "com.orcatech.inventory.item",
+      "doc": "ORCATECH inventory item information related to the sensor"
+    },
+    {
+      "name": "vin",
+      "type": "string",
+      "doc": "The associated Vehicle Identification number"
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "When the record was created"
+    },
+    {
+      "name": "createdBy",
+      "type": "long",
+      "doc": "The com.orcatech.user.id for the user who created the record"
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was updated"
+    },
+    {
+      "name": "updatedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who updated the record"
+    },
+    {
+      "name": "deletedAt",
+      "type": ["null", {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }],
+      "doc": "When the record was deleted"
+    },
+    {
+      "name": "deletedBy",
+      "type": ["null", "long"],
+      "doc": "The com.orcatech.user.id for the user who deleted the record"
+    }
+  ]
+}

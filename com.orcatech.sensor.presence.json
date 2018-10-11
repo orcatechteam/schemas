@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.sensor",
+  "doc": "An event indicating presence or no presence within an area monitored by a sensor",
+  "name": "presence",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "A unix timestamp indicating the time at which the detection occurred"
+    },
+    {
+      "name": "itemid",
+      "type": "int",
+      "doc": "A unique id representing the item in the ORCATECH database"
+    },
+    {
+      "name": "present",
+      "type": "boolean",
+      "doc": "True if the sensor detected presence, false if the sensor is no longer detecting a presence"
+    },
+    {
+      "name": "areaid",
+      "type": "int",
+      "doc": "A unique id from the ORCATECH database representing the area in which the sensor is monitoring"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.algorithms",
+  "doc": "Sequential sensor firings of a com.orcatech.sensor.line.segment",
+  "name": "walkSegment",
+  "fields": [{
+      "name": "order",
+      "type": "int",
+      "doc": "Order number for the current sensor pair"
+    },
+    {
+      "name": "firstSensor",
+      "type": "int",
+      "doc": "A unique id representing the item (i.e. first sensor in the pair) in the ORCATECH Inventory database"
+    },
+    {
+      "name": "secondSensor",
+      "type": "int",
+      "doc": "A unique id representing the item (i.e. second sensor in the pair) in the ORCATECH Inventory database"
+    },
+    {
+      "name": "duration",
+      "type": "float",
+      "doc": "Time differential between the firings of each sensor in seconds"
+    },
+    {
+      "name": "assumed",
+      "type": "boolean",
+      "doc": "True if the distance is null and was assumed to be 2 feet, false if the distance was measured and entere"
+    },
+    {
+      "name": "distance",
+      "type": "float",
+      "doc": "Distance between the sensors in centimeters"
+    }
+  ]
+}

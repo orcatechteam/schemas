@@ -1,0 +1,42 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.automatic",
+  "doc": "Location as an address",
+  "name": "address",
+  "fields": [{
+      "name": "name",
+      "type": "string",
+      "doc": "Name of the location"
+    },
+    {
+      "name": "displayName",
+      "type": "string",
+      "doc": "Nickname of the location"
+    },
+    {
+      "name": "streetName",
+      "type": "string",
+      "doc": "Street number of the location"
+    },
+    {
+      "name": "streetNumber",
+      "type": "string",
+      "doc": "Street number of the location"
+    },
+    {
+      "name": "city",
+      "type": "string",
+      "doc": "Long name of city"
+    },
+    {
+      "name": "state",
+      "type": "string",
+      "doc": "Abbreviated name of state"
+    },
+    {
+      "name": "country",
+      "type": "string",
+      "doc": "Abbreviated name of country"
+    }
+  ]
+}

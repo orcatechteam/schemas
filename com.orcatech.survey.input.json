@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.survey",
+  "doc": "Captured device input that happened during a survey",
+  "name": "input",
+  "fields": [{
+      "name": "subjectID",
+      "type": "int",
+      "doc": "The id of the subject who the survey is fill out for. Most of the time the survey is filled out by the subject but it can be filled out by a caregiver."
+    },
+    {
+      "name": "deviceInput",
+      "type": "com.orcatech.device.input",
+      "doc": "User input captured by the device."
+    }
+  ]
+}

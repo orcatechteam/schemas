@@ -1,0 +1,102 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.withings",
+  "doc": "Nokia high frequency activity information, see https://health.nokia.com",
+  "name": "vasistas",
+  "fields": [{
+      "name": "device",
+      "type": "com.orcatech.withings.device",
+      "doc": "The Withings device that collection the data"
+    },
+    {
+      "name": "user",
+      "type": "com.orcatech.withings.user",
+      "doc": "The Withings user associated with the data"
+    },
+    {
+      "name": "ascent",
+      "type": "int",
+      "default": 0,
+      "doc": "The number of stories the user has ascended"
+    },
+    {
+      "name": "calories",
+      "type": "int",
+      "default": 0,
+      "doc": "The total number of calories burned included both active and passive periods"
+    },
+    {
+      "name": "caloriesEarned",
+      "type": "int",
+      "default": 0,
+      "doc": "The calories burned while being active"
+    },
+    {
+      "name": "descent",
+      "type": "int",
+      "default": 0,
+      "doc": "How many levels the user has descended, assumming this is in stories of a building"
+    },
+    {
+      "name": "distance",
+      "type": "int",
+      "default": 0,
+      "doc": "How far the user has traveled using step counts"
+    },
+    {
+      "name": "duration",
+      "type": "int",
+      "doc": "The length of time of this epoch in which the measurements were taken"
+    },
+    {
+      "name": "metabolicCalories",
+      "type": "int",
+      "default": 0,
+      "doc": "The metabolic calories used (even by resting) during this period"
+    },
+    {
+      "name": "metabolicCaloriesEarned",
+      "type": "int",
+      "default": 0,
+      "doc": "The metabolic calories earned during this period"
+    },
+    {
+      "name": "runState",
+      "type": "int",
+      "default": 0,
+      "doc": "The running state of the user (1->Not running, 2->running)"
+    },
+    {
+      "name": "sleepState",
+      "type": "int",
+      "default": 0,
+      "doc": "The sleeping state of the user (1->Wake, 2->Light, 3->Deep, 4->REM) for this period"
+    },
+    {
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "The starting timestamp of this period as a unix timestamp"
+    },
+    {
+      "name": "steps",
+      "type": "int",
+      "default": 0,
+      "doc": "The number of steps made by the user during this period"
+    },
+    {
+      "name": "swimLaps",
+      "type": "int",
+      "default": 0,
+      "doc": "The number of laps that the user has gone during this period"
+    },
+    {
+      "name": "walkState",
+      "type": "int",
+      "default": 0,
+      "doc": "If the user is walking (1->false, 2->true)"
+    }
+  ]
+}

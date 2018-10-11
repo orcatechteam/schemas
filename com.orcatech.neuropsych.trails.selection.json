@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.neuropsych.trails",
+  "doc": "A selection event with context relative the trails making test being administered",
+  "name": "selection",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "A timestamp indicating the time at which the event took place."
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "doc": "The type of event that occured. Valid string values are `Success` for a correct selection, `Error` for an incorrect selection and `Miss` for clicking on the test but not any circle tokens"
+    },
+    {
+      "name": "correctToken",
+      "type": "com.orcatech.neuropsych.trails.token",
+      "doc": "The current correct token to be selected by the user"
+    },
+    {
+      "name": "selectedToken",
+      "type": "com.orcatech.neuropsych.trails.token",
+      "doc": "The actual token selected by the user"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.qualtrics",
+  "name": "question",
+  "doc": "The input events captured while the subject was taking a survey.",
+  "fields": [{
+      "name": "id",
+      "type": "string",
+      "doc": "The Qualtrics question id"
+    },
+    {
+      "name": "text",
+      "type": "string",
+      "doc": "The question text"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "doc": "The question type code"
+    },
+    {
+      "name": "choices",
+      "type": {
+        "type": "map",
+        "values": "com.orcatech.qualtrics.question.choice"
+      },
+      "doc": "List of choices where the key is the choice id and the value is information about the choice"
+    }
+  ]
+}

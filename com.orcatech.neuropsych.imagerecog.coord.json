@@ -1,0 +1,22 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.neuropsych.imagerecog",
+  "doc": "Coordinate location and associated image",
+  "name": "coord",
+  "fields": [{
+      "name": "row",
+      "type": "int",
+      "doc": "The row number of the image."
+    },
+    {
+      "name": "col",
+      "type": "int",
+      "doc": "The column number of the image."
+    },
+    {
+      "name": "img",
+      "type": "string",
+      "doc": "An optional image associated with this coordinate. This will be the image file name or an empty string."
+    }
+  ]
+}

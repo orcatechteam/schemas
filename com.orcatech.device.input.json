@@ -1,0 +1,128 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.device",
+  "name": "input",
+  "doc": "The input events captured while a subject is using a device.",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "Timestamp of when the input was made."
+    },
+    {
+      "name": "imageHover",
+      "type": ["null", "boolean"],
+      "default": null,
+      "doc": "Indicates mouse on or off an image. Null indicates on hover event."
+    },
+    {
+      "name": "keyCode",
+      "type": ["null", "int"],
+      "default": null,
+      "doc": "Numeric code of key pressed."
+    },
+    {
+      "name": "keyDown",
+      "type": ["null", "boolean"],
+      "default": null,
+      "doc": "Idicates key pressed or released. Null indicates no key pressed."
+    },
+    {
+      "name": "keysDown",
+      "type": ["null", {
+        "type": "array",
+        "doc": "List of all keys pressed.",
+        "items": "com.orcatech.device.input.event"
+      }]
+    },
+    {
+      "name": "keyText",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Character of key pressed."
+    },
+    {
+      "name": "mouseButton",
+      "type": ["null", "int"],
+      "default": null,
+      "doc": "Mouse button pressed."
+    },
+    {
+      "name": "mouseButtonDown",
+      "type": ["null", "boolean"],
+      "default": null,
+      "doc": "Indicates mouse button pressed or released. Null indicates no button pressed."
+    },
+    {
+      "name": "mouseButtonsDown",
+      "doc": "List of all mouse buttons pressed.",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.device.input.event"
+      }
+    },
+    {
+      "name": "mouseX",
+      "type": ["null", "int"],
+      "default": null,
+      "doc": "Mouse pointer horizontal position."
+    },
+    {
+      "name": "mouseY",
+      "type": ["null", "int"],
+      "default": null,
+      "doc": "Mouse pointer vertical position."
+    },
+    {
+      "name": "scrollDown",
+      "type": ["null", "boolean"],
+      "default": null,
+      "doc": "Indicates scrolled down or up. Null indicates no scroll occurred."
+    },
+    {
+      "name": "scrollLength",
+      "type": "int",
+      "doc": "Distance in pixels scrolled."
+    },
+    {
+      "name": "textBox",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Class name of active textbox."
+    },
+    {
+      "name": "textBoxActive",
+      "type": ["null", "boolean"],
+      "default": null,
+      "doc": "Indicates textbox focused or unfocused. Null indicates no focus occurred."
+    },
+    {
+      "name": "touches",
+      "doc": "List of touch events (expect to always be null as browsers have touch mimic mouse)",
+      "type": {
+        "type": "array",
+        "items": "com.orcatech.device.input.event"
+      }
+    },
+    {
+      "name": "touchType",
+      "type": ["null", "int"],
+      "default": null,
+      "doc": "Touch type id."
+    },
+    {
+      "name": "touchX",
+      "type": ["null", "int"],
+      "default": null,
+      "doc": "Touch horizontal position."
+    },
+    {
+      "name": "touchY",
+      "type": ["null", "int"],
+      "default": null,
+      "doc": "Touch vertical position."
+    }
+  ]
+}

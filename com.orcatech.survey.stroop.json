@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.survey",
+  "doc": "Captured events and timing for an Stroop test administered via a survey",
+  "name": "stroop",
+  "fields": [{
+      "name": "subjectID",
+      "type": "int",
+      "doc": "The id of the subject who the survey is fill out for. Most of the time the survey is filled out by the subject but it can be filled out by a caregiver."
+    },
+    {
+      "name": "task",
+      "type": "com.orcatech.neuropsych.stroop.task",
+      "doc": "Data captured by the Stroop task."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "type": "record",
+  "namespace": "com.orcatech.withings.device",
+  "doc": "A set of timestamps describing the status of a withings device data sync",
+  "name": "heartbeat",
+  "fields": [{
+      "name": "stamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "A unix timestamp indicating the time at which the heartbeat occurred"
+    },
+    {
+      "name": "macaddress",
+      "type": "string",
+      "doc": "The macaddress of the withings device"
+    },
+    {
+      "name": "type",
+      "type": "int",
+      "doc": "The unique identifier assigned by Withings for the device type"
+    },
+    {
+      "name": "attempted",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "The time of the last sync attempt"
+    },
+    {
+      "name": "synced",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "The time of the last successful sync attempt"
+    },
+    {
+      "name": "pulled",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-micros"
+      },
+      "doc": "The time of the last data point pulled from the watch"
+    }
+  ]
+}
